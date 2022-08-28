@@ -3,9 +3,9 @@ CFLAGS=-Wall
 AR=ar
 RANLIB=ranlib
 LD=ld
-all: lfsrlib.a
+all: liblfsr.a
 
-lfsrlib.a: lfsr.o
+liblfsr.a: lfsr.o
 	$(AR) rsv $@ $?
 	$(RANLIB) $@
 
