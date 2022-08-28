@@ -6,11 +6,13 @@ LD=ld
 all: liblfsr.a
 
 liblfsr.a: lfsr.o
+	@echo "[+] Archiving liblfsr.a"
 	$(AR) rsv $@ $?
 	$(RANLIB) $@
 
-.c .o:	*.h
-	$(CC) $(CFLAGS) -o $@ $<
+%.o: %.c
+	@echo "[+] Building objects file for libfsr"
+	$(CC) $(CFLAGS) -c $<
 	
 clean:
 	rm -rf *.o
